@@ -8,7 +8,7 @@ Post-level and daily account-level social media data for two European retail bra
 |---|---|
 | **Brands** | Jacknkings, TIA Supermarché |
 | **Platforms** | Instagram, Facebook, TikTok, YouTube |
-| **Period** | 15 April – 31 August 2026 (first 5 months of a 6-month engagement) |
+| **Period** | 15 April – 15 August 2026 (first 5 months of a 6-month engagement) |
 | **Posts** | 165 |
 | **TikTok daily rows** | 278 |
 | **License** | CC BY-NC 4.0 (Attribution-NonCommercial) |
@@ -16,7 +16,7 @@ Post-level and daily account-level social media data for two European retail bra
 ## About the brands
 
 - **Jacknkings** — an Asian prepared-food and seafood brand owned by **GGI**. On social media it currently promotes its signature fruit-shaped ice cream (trompe-l'œil ice creams).
-- **TIA Supermarché** — an Asian supermarket brand owned by **SARL Legrand** (France), with stores in French cities such as Tours, Reims, Orléans-Saran and Cormontreuil.
+- **TIA Supermarché** — an Asian supermarket brand owned by **SARL Legrand** (France), with stores in French cities such as Tours, Reims and Orléans-Saran.
 
 The author works in digital marketing at both companies. The dataset covers the **first 5 months** of a 6-month reporting window (April–August 2026), shared publicly as a portfolio and open-data resource.
 
@@ -66,19 +66,8 @@ The author works in digital marketing at both companies. The dataset covers the 
 
 ## Notes
 
-- **`spectators`** (unique accounts that watched) was present in the raw Meta export and is **removed** from this dataset because it is redundant with `reach`.
-- **Watch-time units were normalised to seconds**:
-  - Instagram exported `watch_total` as a human-readable duration (e.g. `5 h 3 min`) → converted to seconds.
-  - Facebook exported `watch_total` in **milliseconds** → converted to seconds (rounded).
-  - `watch_avg` was already in seconds on both platforms (the `s` suffix and the note `à partir des publicités` / "from ads" were stripped).
+- **Watch-time metrics** (watch_total and watch_avg) have been standardized to seconds across all platforms.
 - **Two Instagram rows** (`META_JNK_IG_2026-07-27_47`, `META_JNK_IG_2026-07-19_48`) had watch-time data flagged "from ads" with an incomplete `watch_total`; their `watch_total` is left **blank** (their `watch_avg` is retained).
-- **Platform coverage differs**: Meta exports rich engagement metrics (`reach`, `interactions`, `saves`, `followers_gain`, watch time, `crosspost`); TikTok and YouTube exports only provide `views`, `likes`, `comments` and `shares`, so the Meta-specific columns are empty for those platforms.
-- **`content_theme`** is labelled for Meta and TikTok but not yet for YouTube.
-
-## Source & collection
-
-- Data was exported from the official back-ends of **Meta (Facebook & Instagram)**, **TikTok**, and **YouTube** for the brands' own accounts.
-- `caption` is reproduced verbatim from the published posts (original language, including emoji and hashtags).
 
 ## License
 
