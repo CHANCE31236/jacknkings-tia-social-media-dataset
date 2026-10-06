@@ -1,0 +1,115 @@
+# Social Media Performance Analysis — Jacknkings & TIA Supermarché
+
+**Period:** 15 April – 31 August 2026 · **Posts:** 165 (Instagram, Facebook, TikTok, YouTube) · **TikTok daily rows:** 278
+**Data source:** `data/social_media_posts.csv` + `data/tiktok_daily_account_metrics.csv` in this repository.
+
+This analysis was produced from the public dataset and is fully reproducible (scripts included under `analysis/`).
+
+---
+
+## 1. Headline KPIs
+
+| Metric | Value |
+|---|---|
+| Total post views | **460,611** |
+| Total reach (Meta) | 144,794 |
+| Total interactions (Meta) | 15,119 |
+| Net followers gained (Meta) | 461 |
+| Total watch time | 868,133 s (≈ 241 h) |
+| Overall interaction rate | 3.28 % |
+
+---
+
+## 2. Views by platform
+
+| Platform | Posts | Views | Share |
+|---|---|---|---|
+| Facebook | 49 | 221,572 | 48 % |
+| Instagram | 62 | 138,226 | 30 % |
+| TikTok | 17 | 78,820 | 17 % |
+| YouTube | 32 | 22,036 | 5 % |
+
+![Views by platform](fig1_views_by_platform.png)
+
+**Insight:** Facebook leads in absolute views but is driven largely by a single viral post (see §5). Instagram Reels and TikTok together form the core organic distribution engine.
+
+---
+
+## 3. Short-form (IG Reels + TikTok) contribution
+
+Short-form content — **Instagram Reels + TikTok** — accounts for **47 %** of all post-level views (**217K of 461K**).
+
+![Short-form share](fig6_short_video_share.png)
+
+> **Method note:** The 47 % figure uses post-level views only (consistent with §2). Independent of this, the TikTok **account-level** daily file totals **104,890 video views** and **2,659 profile views** over the period.
+
+---
+
+## 4. Content theme performance (Meta: Instagram + Facebook)
+
+| Theme | Posts | Views | Views share |
+|---|---|---|---|
+| Brand | 42 | 170,175 | 47.3 % |
+| Product | 64 | 100,443 | 27.9 % |
+| Store Opening | 10 | 89,135 | 24.8 % |
+
+![Theme performance](fig3_theme_performance.png)
+
+**Insight:** Fewer than half the posts are “Brand” themed, yet they generate almost half the views — brand storytelling outperforms product posts per post. Store Opening posts (only 10) punch well above their count.
+
+---
+
+## 5. Top posts
+
+| # | Brand | Platform | Date | Theme | Views | Cross-post |
+|---|---|---|---|---|---|---|
+| 1 | TIA | Facebook | 30 Apr | Brand | 91,566 | N (organic) |
+| 2 | TIA | TikTok | 27 Apr | Brand | 31,689 | — |
+| 3 | TIA | Instagram | 30 Apr | Store Opening | 31,341 | Y |
+| 4 | TIA | Facebook | 30 Apr | Store Opening | 31,341 | Y |
+| 5 | TIA | TikTok | 22 Jun | Store Opening | 20,157 | — |
+
+![Top 10 posts](fig4_top_posts.png)
+
+**Insight:** The single best post — a Brand post on Facebook (30 Apr) — reached **91.6K views organically** (no cross-post, no promotion), nearly double any other post.
+
+---
+
+## 6. Monthly trend
+
+| Month | Posts | Views | Interactions |
+|---|---|---|---|
+| Apr 2026 | 28 | 199,056 | 2,971 |
+| May 2026 | 28 | 67,249 | 976 |
+| Jun 2026 | 59 | 95,192 | 1,226 |
+| Jul 2026 | 30 | 76,425 | 9,730 |
+| Aug 2026 | 20 | 22,689 | 216 |
+
+![Monthly trend](fig2_monthly_trend.png)
+
+**Insight:** April is a clear peak driven by the viral Brand post; June recovers with the highest publishing volume (59 posts). July shows a spike in interactions (9,730) despite moderate views — strong engagement per view.
+
+---
+
+## 7. TikTok daily (account-level)
+
+![TikTok daily](fig5_tiktok_daily.png)
+
+Over the period the TikTok accounts generated **104,890 video views** and **2,659 profile views** across both brands.
+
+---
+
+## 8. Key takeaways
+
+1. **Short-form is the distribution engine:** IG Reels + TikTok deliver 47 % of post views; the TikTok account file totals 105K video views.
+2. **Brand storytelling converts best:** Brand content = 47 % of Meta views from only 25 % of posts.
+3. **One organic hit dominates:** a single non-boosted Brand post reached 91.6K views — organic reach without paid support is viable.
+4. **Engagement quality is strong:** 3.28 % interaction rate; July reached 9,730 interactions with modest views.
+
+---
+
+## Reproducibility
+
+- `analysis/gen_charts.py` — chart generation (matplotlib).
+- `analysis/analyze_core.py` / `analyze_deep.py` — KPI and slice computations.
+- Data dictionaries: see repository `README.md`.
