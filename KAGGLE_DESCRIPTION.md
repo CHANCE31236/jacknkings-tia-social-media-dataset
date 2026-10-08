@@ -7,7 +7,7 @@ Post-level and daily account-level social media data for two European retail bra
 - **165 posts** across 4 platforms with views, reach, engagement (likes / comments / shares / saves), follower growth, and watch time (on Meta platforms).
 - **278 daily rows** of TikTok account-level metrics (video views, profile views, net likes, comments, shares) for both brands.
 - **Content themes** (`Product` / `Store Opening` / `Brand`) labelled on Meta and TikTok posts.
-- Coverage period: **15 April – 31 August 2026** — the first 5 months of a 6-month social media engagement.
+- Coverage period: **15 April – 31 August 2026** — the five calendar months of a 6-month social media engagement.
 
 ## About the brands
 
@@ -41,7 +41,7 @@ The author works in digital marketing at both companies. The dataset is shared p
 | `caption` | string | Original post caption / video title, kept as published (mostly French, may include emoji and hashtags). |
 | `views` | integer | Total number of video/post views. |
 | `reach` | integer | Number of unique accounts that saw the post (**Meta only**). |
-| `interactions` | integer | Total interactions = likes + comments + shares + saves (**Meta only**). |
+| `interactions` | integer | Platform-reported aggregate interactions (**Meta only**); retained as exported. It differs from the sum of the four listed component columns in 106 of 116 Meta rows. |
 | `likes` | integer | Number of likes. |
 | `comments` | integer | Number of comments. |
 | `shares` | integer | Number of shares. |
